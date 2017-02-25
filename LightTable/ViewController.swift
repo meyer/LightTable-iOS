@@ -14,7 +14,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.layer.cornerRadius = 4
+
+//        Disable device sleep
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
+//        Create pan handler (hey-o)
         var pan = UIPanGestureRecognizer(target:self, action:"handlePan:")
         pan.maximumNumberOfTouches = 2
         pan.minimumNumberOfTouches = 2
